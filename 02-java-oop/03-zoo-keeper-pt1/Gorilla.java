@@ -1,9 +1,9 @@
-
 // create a separate class of gorilla
 public class Gorilla extends Mammal {
     public Gorilla(int energyLvl) {
 		super(energyLvl);
-	}
+    }
+    
     //can throw things at people but will lose energy level (-5) whenever this is done.
     public void throwSomething(){
         energyLvl -= 5;
