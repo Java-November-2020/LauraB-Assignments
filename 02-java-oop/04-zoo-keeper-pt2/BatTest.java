@@ -22,7 +22,7 @@ public class BatTest{
         System.out.println("-------------------------------------------------------------------------------------------------");
     
         //Print the giantBat's energy level.
-        System.out.println("\nGIANT BAT IS DEAD -- YAAAAAAAAY!:");
+        System.out.println("\nGIANT BAT IS DEAD -- YAAAAAAAAY!");
         giantBat.displayEnergy();
     }
 }
