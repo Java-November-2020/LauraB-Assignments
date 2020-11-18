@@ -7,9 +7,6 @@ public class Samurai extends Human{
         //Samurai: Set a default health of 200
         this.health = Samurai.defaultHealth;
         Samurai.numOfSamurai++;
-
-
-
     }
 
     //Samurai: Add a method deathBlow(Human) that kills the other human, but reduces the Samurai's health by half
@@ -26,7 +23,7 @@ public class Samurai extends Human{
     //Samurai: Add a method howMany() that returns the current number of Samurai.
     public static int howMany() {
         // Samurai.numOfSamurai++;
-        System.out.println("The total number of Samurai is: " + Samurai.numOfSamurai);
+        System.out.printf("The total number of Samurai is: %d", Samurai.numOfSamurai);
         return Samurai.numOfSamurai;
     }
 
