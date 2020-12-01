@@ -1,0 +1,22 @@
+@charset "ISO-8859-1";
+
+
+.container{
+	background: purple;
+	border-radius: 15px;
+	text-align: center;
+	padding: 5px;
+}
+
+h1, h4{
+	color: white;
+}
+
+a{
+	color: blue;
+}
+
+button{
+	background-color: orange;
+	margin-bottom: 20px;
+}
