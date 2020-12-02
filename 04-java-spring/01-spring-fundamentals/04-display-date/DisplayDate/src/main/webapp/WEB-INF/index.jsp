@@ -6,17 +6,15 @@
 <html>
 <head>
 <meta charset="ISO-8859-1">
+<meta name="author" content="Laura Bullock">
+<link rel="stylesheet" type="text/css" href= "css/styles.css">
+
 <title>Time Dashboard</title>
 </head>
 <body>
 
-	<button>
-		<a href="/date">Today's Date</a>
-	</button>
-	
-	<button>
-		<a href="/time">Current Time</a>
-	</button>
+		<a href="/date"><button onclick="dateAlert()">Today's Date</button></a>
+		<a href="/time"><button onclick="timeAlert()">Current Time</button></a>
 
 </body>
 </html>

@@ -7,16 +7,22 @@
 <html>
 <head>
 <meta charset="ISO-8859-1">
+<meta name="author" content="Laura Bullock">
+<link rel="stylesheet" type="text/css" href= "css/styles.css">
+
 <title>Date</title>
 </head>
 <body>
-		<div class="container">
-			<fieldset>
-			<legend>Today's Date</legend>
-			<c:set var = "now" value = "${date}" />
-			<h3><fmt:formatDate pattern = "EEEEEE, 'the' dd 'of' MMMM, yyyy"  value = "${now}"/></h3>
-			<a href="/">Back</a>
-			</fieldset>
-		</div>
+	
+	<div class="container">
+		<fieldset>
+		<legend>Today's Date</legend>
+		<c:set var = "now" value = "${date}" />
+		<h3 id="date"><fmt:formatDate pattern = "EEEEEE, 'the' dd 'of' MMMM, yyyy"  value = "${now}"/></h3>
+		<a href="/">Back</a>
+		</fieldset>
+	</div>
+	
+<script type="text/javascript" src="/js/dateAlert.js"></script>	
 </body>
 </html>

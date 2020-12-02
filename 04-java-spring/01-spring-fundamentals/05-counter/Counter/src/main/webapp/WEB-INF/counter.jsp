@@ -14,11 +14,8 @@
 	<div class="container">
 		<h1>You have visited http://localhost:8080/ <c:out value=" ${count}"/> time(s)</h1>
 		<h4>To test another visit --> <a href="/">Click here</a></h4>
-		
 		<div>
-			<button>
-				<a href="/reset">Reset the Counter</a>  <!--figure out the proper way to do a button-->
-			</button>
+			<a href="/reset"><button>Reset the Counter</button></a>
 		</div>
 	</div>
 	
