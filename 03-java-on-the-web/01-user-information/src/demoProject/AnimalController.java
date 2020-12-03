@@ -24,6 +24,6 @@ public class AnimalController {
 		}
 		
 		<c:forEach items="${myAnimals}" var="a">
-		%${a.getSpecies);
+		%${a.getSpecies};
 	}
 }
