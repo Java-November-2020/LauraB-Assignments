@@ -16,6 +16,8 @@
 	<div class="container">
 		<h1>Welcome to Books dot Com</h1>
 		<h3>Showing All books</h3>
+		<a href="/books/add" class="btn btn-primary">Add a Book</a><br><br>
+		
 		<table class="table table-dark">
 			<thead>
 				<tr>
@@ -33,10 +35,13 @@
 						<td><a href="/books/${book.id}">${book.title} </a></td>
 						<td>${book.description}</td>
 						<td>${book.numberOfPages}</td>
+						<td><a href="/books/${book.id}/delete/">Delete</a></td>
 					</tr>
 					</c:forEach>
 				</tbody>
+								
 			</table>
+			
 	</div>
 
 </body>

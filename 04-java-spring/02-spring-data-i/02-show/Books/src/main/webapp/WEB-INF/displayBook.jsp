@@ -1,6 +1,8 @@
 <%@ page language="java" contentType="text/html; charset=ISO-8859-1"
     pageEncoding="ISO-8859-1"%>
-<%@taglib prefix="c" uri="http://java.sun.com/jsp/jstl/core"%>    
+<%@taglib prefix="c" uri="http://java.sun.com/jsp/jstl/core"%>
+<%@ taglib prefix="form" uri="http://www.springframework.org/tags/form"%>
+   
 
 <!DOCTYPE html>
 <html>
@@ -20,12 +22,38 @@
 	<p>Language: <c:out value="${book.language}" /></p>
 	<p>Number of pages: <c:out value="${book.numberOfPages}" /></p>
 	
-	<a href="/books/${book.id}/edit">Edit Book</a>
-	
-	<form action="/books/${book.id}" method="POST">
-	    <input type="hidden" name="_method" value="delete">
-	    <input type="submit" value="Delete">
-	</form>
 
+<h3>Edit Book</h3>
+<form:form method="POST" action="/edit/${book.id}" modelAttribute="book">
+<div class="form-group">
+	<form:label path="title">Title:
+	<form:errors path="title"/>
+	<form:input path="title"/></form:label>
+</div>
+<div class="form-group">
+	<form:label path="description">Description:
+	<form:errors path="description"/>
+	<form:input path="description"/></form:label>
+</div>
+<div class="form-group">
+	<form:label path="language">Language:
+	<form:errors path="language"/>
+	<form:input path="language"/></form:label>
+</div>
+<div class="form-group">
+	<form:label path="numberOfPages">Number Of Pages:
+	<form:errors path="numberOfPages"/>
+	<form:input path="numberOfPages"/></form:label>
+</div>
+<button class="btn btn-success">Save Changes</button>
+</form:form><br>
+
+<a href="/books/${book.id}/delete" class="btn btn-danger">Delete This Book</a><br><br>
+
+<a href="/books">Back to All Books</a>
 </body>
 </html>
+
+<!-- 
+Bootstrap Buttons:
+https://www.w3schools.com/bootstrap/bootstrap_buttons.asp -->

@@ -21,6 +21,8 @@ public class BookController {
 	@Autowired
 	private BookService bService;
 	
+	//Get All Books
+
 	@GetMapping("/books")
 	public String index(Model viewModel) {
 		List<Book> allBooks= this.bService.getAllBooks();
@@ -28,6 +30,7 @@ public class BookController {
 		return "index.jsp";	
 	}
 
+	//Create A Book
 	@GetMapping("/books/add")
 	public String addBook(@ModelAttribute("Book") Book book) {
 		return "add.jsp";
@@ -44,11 +47,30 @@ public class BookController {
 		return "redirect:/books";
 	}
 	
-	
+
+	//Get One Book (Read)
 	@GetMapping("/books/{id}")
-	public String findById(Model viewModel, @PathVariable("id") Long id) {
-		Book book = this.bService.getSingleBook(id);
-		viewModel.addAttribute("book", book);
+	public String findById(@ModelAttribute("book") Book book, Model viewModel, @PathVariable("id") Long id) {
+		Book singleBook = this.bService.getSingleBook(id);
+		viewModel.addAttribute("book", singleBook);
 		return "displayBook.jsp";
+	}
+	
+	//Update A Book
+	@PostMapping("/edit/{id}")
+	public String updateBook(@Valid @ModelAttribute("book") Book book, BindingResult result, @PathVariable("id") Long id, Model viewModel) {
+
+		if(result.hasErrors()) {
+			return "add.jsp";  //going to WEB-INF file
+		}
+			this.bService.updateBook(book);
+			return "redirect:/books/{id}";
+	}
+	
+	//Delete A Book
+	@GetMapping("/books/{id}/delete")
+	public String deleteBook(@PathVariable("id") Long id) {
+		this.bService.deleteBook(id);
+		return "redirect:/books";
 	}
 }

@@ -42,7 +42,6 @@ public class BookService {
 	public String deleteBook(Long id) {  //note:  not public Book here because we are returning a string confirmation
 		this.bRepo.deleteById(id);
 		return "Book " + id + " has been deleted"; //confirms that the Record has been deleted
-
 	}
 	
 	//Create object with parameters -- this is the old way

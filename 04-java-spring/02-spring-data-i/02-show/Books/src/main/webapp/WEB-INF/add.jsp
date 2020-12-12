@@ -54,7 +54,10 @@
 			</form:label>
 		</div>
 		
-		<button>Add New Book</button>
+		<button class="btn btn-primary">Add New Book</button><br><br>
+		
+		<a href="/books">Back to All Books</a>
+		
 	</form:form>
 
 </div>
